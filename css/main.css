@@ -1,0 +1,311 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Rubik&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #100e1d;
+  font-family: 'Poppins', sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.dropdown-menu-active::-webkit-scrollbar {
+  background-color: transparent;
+  padding: 0 5px;
+}
+
+.dropdown-menu-active::-webkit-scrollbar-thumb {
+  background-color: #383166;
+  border-radius: 10px;
+}
+
+.container {
+  border-radius: 60px;
+  background: #1e213a;
+  padding: 40px;
+  height: 40vh;
+  max-width: 800px;
+  width: 100%;
+  -webkit-box-shadow: 5px 5px 10px rgba(2, 17, 15, 0.7);
+          box-shadow: 5px 5px 10px rgba(2, 17, 15, 0.7);
+  position: relative;
+}
+
+.weather-condition__icon {
+  width: 75px;
+  height: 75px;
+  opacity: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  border-radius: 60px;
+  -webkit-transition: opacity .2s ease-in;
+  transition: opacity .2s ease-in;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.search-bar {
+  max-width: 464px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #fff;
+}
+
+.search-bar__icon {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+}
+
+.search-bar .dropdown-menu {
+  z-index: 3;
+  position: absolute;
+  bottom: -250px;
+  border-radius: 18px;
+  background: linear-gradient(269.42deg, #F2FBFF -1.71%, rgba(242, 251, 255, 0.3) 100%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: -1;
+  padding: 12px 26px;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 250px;
+  overflow-y: scroll;
+  -webkit-transition: opacity 0.2s ease-out;
+  transition: opacity 0.2s ease-out;
+}
+
+.search-bar .dropdown-menu__option {
+  cursor: pointer;
+  padding: 0 1em;
+  border-radius: 10px;
+}
+
+.search-bar .dropdown-menu__option:hover {
+  background: #5d42cd;
+}
+
+.search-bar .dropdown-menu-active {
+  position: absolute;
+  bottom: -250px;
+  border-radius: 18px;
+  background: #8086c2;
+  padding: 12px 26px;
+  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  opacity: 1;
+  overflow-y: scroll;
+  height: 250px;
+  -webkit-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  z-index: 99;
+}
+
+.search-bar input {
+  background: #8086c2;
+  opacity: 0.5;
+  border-radius: 18px;
+  border: none;
+  outline: none;
+  padding: 12px 26px;
+  margin: 0 auto;
+  width: 100%;
+  font-size: 15px;
+  line-height: 22px;
+  font-family: 'Poppins', sans-serif;
+  z-index: 99;
+  color: #fff;
+}
+
+.search-bar input::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.search-bar input:-ms-input-placeholder {
+  color: #fff;
+}
+
+.search-bar input::-ms-input-placeholder {
+  color: #fff;
+}
+
+.search-bar input::placeholder {
+  color: #fff;
+}
+
+.search-bar__icon path {
+  stroke: #fff;
+}
+
+.search-bar__icon {
+  z-index: 100;
+}
+
+.weather-block {
+  color: rgba(242, 251, 255, 0.7);
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+}
+
+.weather-block-info {
+  font-size: 46px;
+  line-height: 55px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 20px 0;
+}
+
+.weather-block-info p {
+  margin-bottom: 11px;
+  text-align: center;
+}
+
+.weather-block-info .geoposition {
+  font-size: 0.7em;
+  line-height: 22px;
+  margin-bottom: 25px;
+}
+
+.weather-block-secondary {
+  font-size: 34px;
+  line-height: 40px;
+}
+
+.weather-block-secondary p {
+  text-align: center;
+}
+
+@media only screen and (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+  .weather-condition-image {
+    top: -15%;
+    right: 0;
+    max-width: 250px;
+  }
+}
+
+@media only screen and (max-width: 968px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    max-width: 568px;
+    padding: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .weather-condition-image {
+    max-width: 200px;
+    top: 0;
+    right: 0;
+  }
+}
+
+@media only screen and (max-width: 568px) {
+  .container {
+    width: 100%;
+    max-width: 568px;
+    border-radius: 0;
+  }
+  .weather-condition-image {
+    display: none;
+  }
+  .temperature {
+    background: linear-gradient(202.53deg, #E8FCFF 24.11%, rgba(232, 252, 255, 0) 109.2%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-backdrop-filter: blur(43px);
+            backdrop-filter: blur(43px);
+    font-weight: 500;
+    font-size: 106px;
+    line-height: 126px;
+    z-index: -1;
+  }
+  .weather-block-info {
+    margin: 40px 0;
+    font-size: 28px;
+  }
+  .weather-block-secondary {
+    font-size: 28px;
+  }
+}
+/*# sourceMappingURL=main.css.map */

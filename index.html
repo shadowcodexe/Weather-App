@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Weather App</title>
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="overlay"></div>
+
+        <div class="search-bar">
+
+            <input type="text" class="search-bar__input" placeholder="Search">
+
+            <svg class="search-bar__icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M8.45714 14.1714C11.6131 14.1714 14.1714 11.613 14.1714 8.45708C14.1714 5.30117 11.6131 2.7428 8.45714 2.7428C5.30123 2.7428 2.74286 5.30117 2.74286 8.45708C2.74286 11.613 5.30123 14.1714 8.45714 14.1714Z" stroke="#97A0B9" stroke-opacity="0.7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M17.1428 17.1428L12.8571 12.8571" stroke="#97A0B9" stroke-opacity="0.7" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+
+            <div class="dropdown-menu"></div>
+                
+        </div>
+
+        <div class="weather-block weather-block-info">
+
+            <p class="geoposition">Select a city from the search</p>
+            
+            <p class="weather-condition">
+            </p>
+            
+            <img src="" alt="" class="weather-condition__icon">
+            
+            <p class="temperature"></p>
+
+        </div>
+
+        <div class="weather-block weather-block-secondary">
+            
+            <p class="humidity"></p>
+
+            <p class="wind-speed"></p>
+
+        </div>
+
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="https://kit.fontawesome.com/fb50239dd4.js" crossorigin="anonymous"></script>
+</body>
+</html>

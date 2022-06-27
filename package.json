@@ -1,0 +1,16 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "repository": "https://github.com/shadowcodexe/Weather-App",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "js",
+    "javascript"
+  ],
+  "author": "Ilya <shadowpounce@icloud.com>",
+  "license": "ISC"
+}
